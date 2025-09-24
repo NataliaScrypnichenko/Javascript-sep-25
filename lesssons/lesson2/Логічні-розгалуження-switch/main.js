@@ -18,7 +18,7 @@
 
 let color = prompt('enter color');
 
-switch (color ==='green') {
+switch (color ) {
     case 'green':
         console.log('go!');
         break;
