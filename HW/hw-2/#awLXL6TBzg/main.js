@@ -13,10 +13,10 @@ let coursesAndDurationArray = [
 
 
 if (coursesAndDurationArray [0].monthDuration > 5) {
-    console.log(coursesAndDurationArray[0],'- Супер');
+    console.log(coursesAndDurationArray[0]['title'],'- Супер');
 }
 if (coursesAndDurationArray[1].monthDuration > 5) {
-    console.log(coursesAndDurationArray[1],'Супер');
+    console.log(coursesAndDurationArray[1] ['title'],'- Супер');
 }
 if (coursesAndDurationArray[2].monthDuration > 5)
 {
