@@ -1,0 +1,16 @@
+.product-card{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.product-title{
+    text-align: center;
+    color: rgba(112, 128, 144, 0.42);
+    font-family: Inter, sans-serif;
+    font-size: 32px;
+
+}
+.product-image{
+    width: 250px;
+}
