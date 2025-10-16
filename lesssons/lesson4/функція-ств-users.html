@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+ // let user1 = {
+ //     id: 1,
+ //     name:'pety',
+ //     age: 18,
+ //     status: true
+ // }
+ // let user2 = {
+ //     id: 2,
+ //     name:'sveta',
+ //     age: 18,
+ //     status: true
+ // }
+ // let user3 = {
+ //     id: 1,
+ //     name:'sara',
+ //     age:68,
+ //     status: true
+ // }
+ // let user4 = {
+ //     id: 2,
+ //     name:'sdf',
+ //     age: 58,
+ //     status: true
+ // }
+
+ // userFactory()-це фабрична ф-я для створення об'єктів
+
+ function userFactory(id, name,age,status){
+// це тільки шаблон для використання
+     let user={
+         id: id,
+         name: name,
+         age: age,
+         status: status
+     }
+     return user;// тут ф-я створює потім відає нам на користування
+ };
+ //це тут говориться по працюй userFactory() і те що в тебе вийде положи його сюди let user =
+ let user2 = userFactory(1,'John',33,true);
+ let user3 = userFactory(2,'sasha',43,false);
+ let user1 = userFactory(3,'kety',66,false);
+ let user4 = userFactory(4,'sara',12,true);
+ console.log(user1);
+ console.log(user2);
+ console.log(user3);
+ console.log(user4);
+// ці обєкти побудовані на базі шаблона
+
+
+
+
+
+</script>
+</body>
+</html>
