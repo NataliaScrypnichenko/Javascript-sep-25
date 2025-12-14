@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="main.js">
+    let str = 'hello okten';
+    console.log(str);
+    console.log(str[0]);//H
+    for (const strElement of str) {
+        console.log(strElement);
+    };//протітерує стрінгу
+    console.log(str.concat('!!!'));//Hello Okten!!!
+    console.log(str.toUpperCase())//HELLO OKTEN
+    console.log(str.toLowerCase())//hello okten
+    console.log(str.startsWith('he'));//true
+    console.log(str.endsWith('en'));//true
+    console.log(str.substring(0, 7));//0-з якого рызати 7-по який
+    console.log(str.indexOf('h'));// показує індекс з ліва на право
+    console.log(str.indexOf('o',5));// показує з якої позиції шукати
+    console.log(str.lastIndexOf('e'));// 9-показує індуекс з право на ліво
+    console.log(str.charAt('6'));// 'o'
+    console.log(str.replace('e','!'));// h!llo okten
+    console.log(str.replaceAll('e', '*'));// h*llo okt*n
+    console.log(str.split(' '));// ["hello", "okten"]
+</script>
+</body>
+</html>
