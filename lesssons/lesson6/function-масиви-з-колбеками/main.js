@@ -68,6 +68,7 @@ let users = [
 //     return newUser;// тут повернули його і він попаде в новий масив
 // })
 // console.log(mapedUsers);
+
 // //map()-дає можливість на основі старого масива зробити новий
 // //можна зробити по іншому тобто зразу повертати новий об'єкт
 // let mapedUsers1=  users.map(function(value, index){
