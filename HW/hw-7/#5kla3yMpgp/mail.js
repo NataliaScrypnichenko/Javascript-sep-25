@@ -22,12 +22,35 @@ function Car(model, manufacturer, yearOfManufacture, maximumSpeed, engineCapacit
     this.yearOfManufacture = yearOfManufacture;
     this.maximumSpeed = maximumSpeed;
     this.engineCapacity = engineCapacity;
+    this.drive=function (){
+        console.log(`їдемо зі швидкістю ${this.maximumSpeed} на годину`)
+    };
+    this.info=function (){
+        for(const keys in this){// циклом перебирати і виводити ключ і значення
+           console.log(keys, this[keys]);
+        }
+    };
+    this.increaseMaxSpeed =function (newSpeed){
+        if (newSpeed > 0) {
+          this.maximumSpeed = this.maximumSpeed + newSpeed;
+        }
+    };
+    this.changeYear = function (newValue){
+        this.yearOfManufacture = newValue;
+    };
+    this.addDriver = function (driver){
+        this. driver= driver
+    };
+};
 
+const car=new Car ('Mercedes','USA',1987,90,80);
+console.log(car);
+car.drive();
+car.info();
+car.increaseMaxSpeed(50);
+console.log(car);
+car.changeYear(2020);
+console.log(car);
+car.addDriver({name:'Dasha'})//тут нужно передавать об'єктом
+console.log(car);
 
-}
-let car=new Car ('Mercedes','USA',1987,90,80)
-console.log(car.drive());
-
-console.log(car.info());
-console.log(car.increaseMaxSpeed(30));
-console.log(car.changeYear(1999));
