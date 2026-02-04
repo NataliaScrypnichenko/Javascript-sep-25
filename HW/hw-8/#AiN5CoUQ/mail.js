@@ -6,13 +6,16 @@
 // Подумати і реалізувати логіку, в якій кінцевий об’єкт буде мати функції, які в нього були до цього моменту.
 
 
-//вирішила за допомоги відповіді
+//вирішила за допомоги відповіді ДЗ
 function copyObject(obj) {
     if (obj === undefined) {
         return undefined;
     }
     if (obj === null) {
         return null;
+    }
+    if (typeof obj ==='number'&& Number.isNaN===NaN(obj)){
+        return NaN;
     }
     if (obj ) {
 
@@ -38,6 +41,8 @@ function copyObject(obj) {
     throw new Error('!!!!!!!!')
 }
 const clone = copyObject({id: 1, name:'Dasha',greeting(){console.log('hello')}, work(){console.log('by')}});
-clone.work()
-clone.greeting()
-
+clone.work();
+clone.greeting();
+console.log(copyObject(undefined));
+console.log(copyObject(20));
+console.log(copyObject(null));
