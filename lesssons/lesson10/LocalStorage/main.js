@@ -22,30 +22,31 @@
 // //localStorage
 // localStorage.setItem('user',stringify);
 
-//змінити коли масив
-let users = [
-    {name: 'vasya', age: 31, status: false},
-    {name: 'petya', age: 30, status: true},
-    {name: 'kolya', age: 29, status: true},
-    {name: 'olya', age: 28, status: false},
-    {name: 'max', age: 30, status: true},
-    {name: 'anya', age: 31, status: false},
-    {name: 'oleg', age: 28, status: false},
-    {name: 'andrey', age: 29, status: true},
-    {name: 'masha', age: 30, status: true},
-    {name: 'olya', age: 31, status: false},
-    {name: 'max', age: 31, status: true}
-];
-//ми записали все це локал сторич тепер вона не потрибна можна закоментувати
+// //змінити коли масив
+// let users = [
+//     {name: 'vasya', age: 31, status: false},
+//     {name: 'petya', age: 30, status: true},
+//     {name: 'kolya', age: 29, status: true},
+//     {name: 'olya', age: 28, status: false},
+//     {name: 'max', age: 30, status: true},
+//     {name: 'anya', age: 31, status: false},
+//     {name: 'oleg', age: 28, status: false},
+//     {name: 'andrey', age: 29, status: true},
+//     {name: 'masha', age: 30, status: true},
+//     {name: 'olya', age: 31, status: false},
+//     {name: 'max', age: 31, status: true}
+// ];
+// //ми записали все це локал сторич тепер вона не потрибна можна закоментувати
+//
+// localStorage.setItem('users',JSON.stringify(users))
 
-localStorage.setItem('users',JSON.stringify(users))
-
-// let usersJSON=localStorage.getItem('users');
-// console.log(usersJSON);
-// //перетворюємо на звичайний об'єкт JSON
-// let usersS =JSON.parse(usersJSON);
-// console.log(usersS);//провіряємо
-// // додаемо об'єкт
-//   users.push({name:'Natasha', age: 35, status: false});
-//   console.log(users);
-
+let usersJSON=localStorage.getItem('users');
+console.log(usersJSON);
+//перетворюємо на звичайний об'єкт JSON
+let users =JSON.parse(usersJSON);
+console.log(users);//провіряємо
+// додаемо об'єкт
+  users.push({name: 'maxx', age: 31, status: true});
+  console.log(users);
+//зберегти його
+localStorage.setItem('users', JSON.stringify(users));
