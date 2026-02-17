@@ -5,9 +5,37 @@
     <title>Title</title>
 </head>
 <body>
-
+<div class="cartBig">
+</div>
 <script>
-  localStorage.setItem('cart');
+    // // console.log(localStorage.getItem('cart'));
+
+    let cartJSON = localStorage.getItem('cart');
+    let cart =JSON.parse(cartJSON);
+    console.log(cart);
+
+    let cartBig = document.getElementsByClassName("cartBig")[0]
+
+    for (const item of cart) {
+
+         let divCart = document.createElement('div');//h2-img
+
+        let img = document.createElement('img');
+        img.src = item.image;
+        img.style.width = '100px';
+
+        let h2 = document.createElement('h2');
+        h2.innerText = item.title;
+
+        let p = document.createElement('p');
+        p.innerText = `${item.price} UAH`;
+
+        divCart.append(img, h2, p);
+        cartBig.appendChild(divCart);
+    }
+
+
+
 </script>
 
 </body>

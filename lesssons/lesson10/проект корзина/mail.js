@@ -34,19 +34,18 @@ for (const product of products) {
     let h2 = document.createElement('h2');
     h2.innerText = ` ${product.title} - ${product.price} UAH`;
 
-    let button = document.createElement('button');
-    button.innerText = ' відправ в корзину';
+    let buttonElement = document.createElement('button');
+    buttonElement.innerText = 'add at cart';
 
-   button.onclick = () => {
-       let cart = JSON.parse(localStorage.getItem('cert')) || [];
+  buttonElement.onclick = function () {
+      // console.log(localStorage.getItem('cart'));
+
+       let cart = JSON.parse(localStorage.getItem('cart')) || [];
        cart.push(product);
-
+       localStorage.setItem('cart', JSON.stringify(cart));
    }
-
-
+     productBlock.append(h2, img, buttonElement);
     productsDiv.appendChild(productBlock);
-  productsDiv.append(h2, img, button);
-
 }
 
 
