@@ -23,6 +23,7 @@ let coursesAndDurationArray = [
     {title: 'Frontend', monthDuration: 4}
 
 ];
+
 for (const courses of coursesAndDurationArray) {
     let div = document.createElement('div');
      div.classList.add('item');
