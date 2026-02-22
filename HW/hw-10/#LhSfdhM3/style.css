@@ -1,0 +1,15 @@
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    margin-bottom: 10px;
+    width: 400px;
+    background-color: rgba(241, 177, 152, 0.87);
+    border: 1px solid rgba(103, 51, 34, 0.87);
+    border-radius: 10px;
+}
+p{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: rgba(26, 49, 80, 0.54);
+}
