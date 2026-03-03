@@ -11,15 +11,16 @@
 //
 let price= localStorage.getItem('price');
 
-// минулий час візиту
-let lastVisit= localStorage.getItem('lastVisit');
-
 //перевіряємо якщо ціни ще немає — ставимо 100,якщо это збыльшуэмо
 if (price ===null){
     price= 100
 }else {
     price= + price
 }
+// минулий час візиту
+let lastVisit= localStorage.getItem('lastVisit');
+
+
 //створю поточний час
 let now= new Date().getTime();
 
