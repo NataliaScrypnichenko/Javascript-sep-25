@@ -29,6 +29,7 @@ if (lastVisit !== null){
     if(differentTime > 10000){
         price +=10
     }
+    // console.log(differentTime);
 }
 
 // додаю ключ і значеення і зберігаю
@@ -37,3 +38,7 @@ localStorage.setItem('lastVisit', now);
 
 // записую в дів на сторінку
 document.getElementById('price').innerText = price + " грн";
+
+// console.log(now);
+// console.log(lastVisit);
+
