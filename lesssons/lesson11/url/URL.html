@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // fetch('https://jsonplaceholder.typicode.com/posts?userId=9')//щоб не вказувати велику кількість  користувачів це можна спростити, для цього існує new URL і туди можна предати  урлу а саме тільуи базу
+    // .then((value) => value.json())
+    // .then((value) => {
+    //     console.log(value)
+    //
+    // })
+
+
+   let url = new URL('https://jsonplaceholder.typicode.com/posts')
+  // як додати параметри пошуку (коли урла показує все)
+    url.searchParams.set('userId', 8)// він каже якщо я знайду ключ який ти вже визначив з певними значенями які нас цікавить, то я перепишу значення ключ залишиться не буде дубляжів.set('userId', 8) оскільки це референціальний тип url ми його всередині змінили і вся інфо..тут існує
+   fetch(url);
+    .then((value) => value.json())
+    .then((value) => {
+        console.log(value)
+    })
+  //  URL.searchParams
+        .get()//Отримує значення параметра url.searchParams.get("name");//забрати параметри
+       .getAll()// Отримує всі значення одного параметра (якщо їх кілька).
+        . set()// Змінює значення параметра.Якщо параметра не було — він створиться.
+        .append()// Додає нове значення параметра.
+        . delete()// Видаляє параметр.
+        .has()//Перевіряє чи існує параметр. url.searchParams.has("age");..
+        .toString()// Перетворює параметри назад у рядок.
+        .keys()// Отримує тільки ключі.  for (let key of url.searchParams.keys()) {console.log(key);}
+        .values()// Отримує тільки значення for (let value of url.searchParams.values()) {console.log(value);}
+        .entries()//
+        .forEach()// про ітерувати їх
+
+    // 3. Перебір параметрів
+    // Через for...of
+    // for (let [key, value] of url.searchParams) {
+    //     console.log(key, value);
+    // }
+    // Результат:
+    //     name John
+    //     age 25
+    //     page 2
+</script>
+</body>
+</html>
