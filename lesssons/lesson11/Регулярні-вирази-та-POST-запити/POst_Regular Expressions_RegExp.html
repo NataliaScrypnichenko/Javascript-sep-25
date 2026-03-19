@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+
+        }
+        label{
+            display: block;
+            padding: 10px;
+        }
+        input{
+            width: 100px;
+            height: 10px;
+            margin-left:10px ;
+        }
+        button{
+            width: 100px;
+            height: 30px;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <label>
+        userId
+        <input type="text" name="userId"  pattern="[0-9]">
+    </label>
+    <label>
+        title
+        <input type="text" name="title">
+    </label>
+    <label>
+        body
+        <input type="text" name="body">
+    </label>
+    <button>save</button>
+</form>
+
+<script src="main.js">
+    // Регулярні вирази (Regular Expressions / RegExp) — це спеціальний синтаксис для пошуку, перевірки та заміни тексту.У JavaScript їх часто використовують для:(перевірки email,перевірки телефону,пошуку чисел у тексті, валідації форм, парсингу рядків)
+    // 1. Як створити регулярний вираз
+    // 2. Основні методи RegExp
+    //     .test()-Перевіряє чи є співпадіння
+    // let reg = /cat/;
+    // console.log(reg.test("I have a cat"));//true
+    // .match()-Повертає знайдений результат.
+    //    let text = "I have a cat";
+    // let result = text.match(/cat/);
+    // console.log(result);
+    // replace()-Замінює текст.
+    //     let text = "I have a cat";
+    // let result = text.replace(/cat/, "dog");
+    // console.log(result);//I have a dog
+    // 3. Основні символи RegExp
+    //     . (крапка) = Будь-який символ. ///  /c.t/ = Підійде: cat, cot, cut
+    //     ^ початок рядка /^cat/ Підійде: cat is here
+    //     $ кінець рядка /cat$/ Підійде: I have cat
+    // 4. Класи символів
+    //     [abc] Один із символів. /[abc]/  Підійде:( a, b, c)
+    //     [a-z]-Будь-яка маленька літера. /[a-z]/
+    //     [A-Z]- Великі літери./[A-Z]/
+    //     [0-9]- Цифри./[0-9]/
+    //     [^abc]-Будь-який символ крім /[^abc]/
+    // 5. Скорочені класи
+    // Символ	Значення
+    //  \d	    цифра
+    //  \D     не цифра
+    //  \w	    буква або цифра
+    //  \W	    не буква
+    //  \s	    пробіл
+    // //  \S 	не пробіл
+    // 6. Квантифікатори (кількість)
+    // +1 або більше.
+    // /\d+/--123,45,2
+    // *  0 або більше.
+    // /a*/
+    //     ?--0 або 1.
+    // {n}-Точно n разів.  /\d{3}/
+    // {n,m}-Від n до m.- /\d{2,4}/----12, 123, 1234
+    // 7. Флаги регулярних виразів
+    // Пишуться після /
+    // g — global =  Шукає всі співпадіння /abc/g
+    // i — ignore case   Ігнорує регістр./abc/i
+    // m — multi line Для багаторядкових текстів.
+    // 11. Найчастіші регулярні вирази
+    // RegExp	Значення
+    // /\d+/	знайти числа
+    // /\w+/	знайти слова
+    // /\s/	знайти пробіл
+    // /^abc/	починається з abc
+    // /abc$/	закінчується на abc
+    // /a+/	багато a
+
+</script>
+</body>
+</html>

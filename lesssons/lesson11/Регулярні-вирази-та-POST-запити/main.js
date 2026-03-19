@@ -1,0 +1,67 @@
+//зробити запис об'єкта через АРІ в базу даних
+// те що будемо робити воно все получатиметься, але по факту в базі даних нічого не буде,
+// тому що це фіктивно ств АРІ статус 200-це заглушка
+// userId <input type="text" name="userId"> ми пишемо type="text" але потрібно в цифрах,при цьому ми зробимо якусь
+// валідацію можна зробити за допомоги в будованого pattern="[a-zA-Z0-9_\.\-]+" регулярних виразів або джаваскріпта
+//= він являється стрінговий
+
+// 1. знаходимо form
+// let form = document.forms[0];
+// form.onsubmit = function (event) {
+//     event.preventDefault();//cторінка не перезавантажується
+//     // зтязуємо інпути з форми
+//     let userId = this.userId.value;
+//     //як зробити щоб провіряти що саме число знаходиться в полі(все що приходить від користувача приходить у вигляді стрінги)
+//     // match()-повертає число 0 або числа якщо знайшов їх,matchAll()- ітеруємий об'єкт
+//     // g — global =  Шукає всі співпадіння /abc/g(//g якщо так то це важатиметься кометрар)
+//     //      userId.match(/\d/g)
+//     // userId.match(/[0-9]/g)
+//     //як перевірити чи існує == якщо воно немечить тобто не співпадає
+//     if (!userId.match(/[0-9]/g)) {
+//         console.log("errorroro");
+//     }
+//           // let title=this.title.value;
+//     //якщо хочу щоб в body користувач написав три слова мінімум то body.match(/\w/g)-це букви
+//     //(\w+\s)- описали слово з пробілом,(\w+\s){3,}-а так описали три слова
+//     let body = this.body.value;
+//     // body.match(/(\w+\s){3,}/g)
+//     //перевірка
+//     // if (!!body.match(/(\w+\s){3,}/g)){
+//     //     console.log("потрібно вести три слова");
+//     // }
+// console.log(!!body.match(/(\w+\s){3,}/g));
+//     // console.log(title, body,userId);
+//
+//
+// }
+
+//регулярки дозволяють провіряти шаблони в середині стрінги.Найти можна (regex.101.com) сайти
+//js regex якщо нам потрыбна регулярка то її можна написати в пошуку
+
+//зберігаємо інформацію АРІ
+let form = document.forms[0];
+form.onsubmit = function (event) {
+    event.preventDefault();
+    // зтязуємо інпути з форми
+    let userId = this.userId.value;
+    let title = this.title.value;
+    let body = this.body.value;//це параметр який повинен зберігатися
+    //робимо провіркау на прийнятя даних в інпут
+    if (!!userId.match(/[0-9]/g) && !!body.match(/(\w+\s){3,}/g)) {
+        //зараз зможемо зробити запис цього об'єкта,відправити на АРІ
+        //якщо все задовільняє в інпутах то робимо запити методом POST
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify({//  body тіло нашого реквесту//записуємо об'єкт
+                title: title,
+                body: body,
+                userId: +userId,
+            }),
+            headers: {// зараз несеться інформація але пізніше тут будуть урли захищенні
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+    }
+}
