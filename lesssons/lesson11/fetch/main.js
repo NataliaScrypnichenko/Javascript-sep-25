@@ -1,20 +1,20 @@
 //щоб отримати інформацію ми заходимо на сайт (https://jsonplaceholder.typicode.com/)
 // Guide->Getting a resource і копіюєм fetch повертає об'єкт проміс
 
-// fetch('https://jsonplaceholder.typicode.com/users')
-//     .then((response) => response.json())// (response) назва довільна і сюд приходить відповідь від сервера,
-//                                                   // і з відповіді витягує об'єкт json() і перетворює на js об'єкти
-//     // .then((json) => console.log(json));// і сюди передає читстий масив, вивівся масив і тільки
-//     //                                    // тут можна робити все що завгодно з цими даними,то му що їх видно тільки в цьому місці
-//    .then((users) => { //самій потім прописати дом структуру вивисти дані на сайт крей елемент
-//        for (const {name,username, email} of users) {
-//           document.write(`<div>
-//               ${name}  ${username}
-//
-//
-//            </div>`);
-//        }
-//    })
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then((response) => response.json())// (response) назва довільна і сюд приходить відповідь від сервера,
+                                                  // і з відповіді витягує об'єкт json() і перетворює на js об'єкти
+    // .then((json) => console.log(json));// і сюди передає читстий масив, вивівся масив і тільки
+    //                                    // тут можна робити все що завгодно з цими даними,то му що їх видно тільки в цьому місці
+   .then((users) => { //самій потім прописати дом структуру вивисти дані на сайт крей елемент
+       for (const {name,username, email} of users) {
+          document.write(`<div>
+              ${name}  ${username}
+
+
+           </div>`);
+       }
+   })
 
 
 // /щоб отримати інформацію ми заходимо на сайт (https://dummyjson.com/docs)
