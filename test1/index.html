@@ -10,13 +10,19 @@
     <link rel="stylesheet" href="style-481-768.css">
 </head>
 <body>
-<form id="from" class="from">
-    <h3>Test</h3>
+<div class="form">
+
     <div class="nameValue">
-        <p></p>
-        <input id="email" placeholder="Name=Value">
-        <button id="buttonAdd">Add</button>
+       <div>
+           <h3>Test</h3>
+           <p></p>
+           <input id="nameValue" name="ifoNameValue" placeholder="Name=Value">
+            <button id="buttonAdd">Add</button>
+           <p id="error" class="error"> </p>
+        </div>
+
     </div>
+
     <div id="result" class="result">
          <p></p>
         <div id="info" class="info"></div>
@@ -27,7 +33,9 @@
             <button id="buttonDelete">Delete</button>
         </div>
     </div>
-</form>
+
+</div>
+
 <script src="mail.js">
 
 </script>
