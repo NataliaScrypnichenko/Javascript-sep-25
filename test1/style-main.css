@@ -64,12 +64,13 @@ checkbox_input{
     margin-bottom: -2px;
     border-radius: 2px;
 }
-div_style{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border:1px solid rgb(0, 0, 0);
-}
+/*p_checkbox{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    gap: 10px;*/
+/*    border:1px solid rgb(0, 0, 0);*/
+/*}*/
 .buttonInfo{
     width: 100px;
     height: 350px;
