@@ -52,25 +52,24 @@ input{
     border: 3px solid rgb(43, 87, 43);
     margin-bottom: 20px;
 }
-checkbox_input{
+.p_info{
+    margin-top: 5px;
+    margin-left: 10px;
+    padding-right: 10px;
+}
+.checkbox_p{
     /*відключаємо всі стандартні форми */
     appearance: none;
     /*формуємо*/
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     border:2px solid crimson;
     /*margin-bottom: 0;*/
     /*опустити нижще*/
-    margin-bottom: -2px;
-    border-radius: 2px;
+    margin-bottom: -3px;
+    border-radius: 16px;
 }
-/*p_checkbox{*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    gap: 10px;*/
-/*    border:1px solid rgb(0, 0, 0);*/
-/*}*/
+
 .buttonInfo{
     width: 100px;
     height: 350px;

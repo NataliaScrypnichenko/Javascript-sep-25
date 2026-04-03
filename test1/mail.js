@@ -4,7 +4,6 @@ let divInfo = document.getElementById("info");
 let buttonAdd = document.getElementById("buttonAdd");
 let error = document.getElementById("error");
 
-
 buttonAdd.onclick = function () {
     // зчитуємо інформацію, прибираємо пробіли на початку і в кінці
     let info = input.value.trim();
@@ -16,10 +15,15 @@ buttonAdd.onclick = function () {
     if (matchResult) {
         // якщо правильний
         let p = document.createElement("p");
+        p.classList.add('p_info');
 
-        // додаю інформацію
-        p.innerText = matchResult[1] + " = " + matchResult[2] ;
+        let checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.classList.add('checkbox_p');
 
+
+        p.innerText = ''+ matchResult[1] + " = " + matchResult[2] ;
+        p.appendChild(checkbox);
 
         divInfo.appendChild(p);
         // очищаю повідомлення про помилку
@@ -36,8 +40,6 @@ buttonAdd.onclick = function () {
     let buttonSortName=document.getElementById("buttonSortName");
     let buttonSortValue= document.getElementById("buttonSortValue");
     let buttonDelete=document.getElementById("buttonDelete");
-
-
 
 buttonSortName.onclick = function () {
 //створюю масив для сортування
@@ -96,15 +98,17 @@ buttonSortValue.onclick = function () {
         divInfo.appendChild(arr[i]);
     }
 }
-    // // створюю checkbox
-//         // let checkbox = document.createElement("input");
-//         // checkbox.type = "checkbox";
-//         // checkbox.classList.add('checkbox');
-//         // p.appendChild(checkbox);
-//         //створимо div для стилізації p and checkbox
-//
-//         // let divStyle = document.createElement("div");
-//         // divStyle.classList.add('div_style');
-//         // divStyle.append(p, checkbox);
-// p.appendChild(checkbox);
-// p.classList.add('p_checkbox');
+
+buttonDelete.onclick = function () {
+    let items = divInfo.children;
+
+    for (let i = items.length - 1; i >= 0; i--) {
+
+        let checkbox = items[i].querySelector("input");
+        // провіряю якщо рядок відмічений, видалити його
+        if (checkbox.checked) {
+            items[i].remove();
+        }
+
+    }
+}
