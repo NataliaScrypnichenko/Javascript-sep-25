@@ -79,7 +79,7 @@ buttonSortName.onclick = function () {
 buttonSortValue.onclick = function () {
     let arr = [];
     let items = divInfo.children;
-
+//
     for (let i = 0; i < items.length; i++) {
         arr.push(items[i]);
     }
@@ -101,7 +101,7 @@ buttonSortValue.onclick = function () {
 
 buttonDelete.onclick = function () {
     let items = divInfo.children;
-
+    // ітеруєю масив з кінця щоб не прошити вже існуючі індекси
     for (let i = items.length - 1; i >= 0; i--) {
 
         let checkbox = items[i].querySelector("input");
