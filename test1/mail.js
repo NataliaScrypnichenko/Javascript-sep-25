@@ -22,7 +22,7 @@ buttonAdd.onclick = function () {
         checkbox.classList.add('checkbox_p');
 
 
-        p.innerText = ''+ matchResult[1] + " = " + matchResult[2] ;
+        p.innerText = matchResult[1] + " = " + matchResult[2] + ' ';
         p.appendChild(checkbox);
 
         divInfo.appendChild(p);
@@ -35,7 +35,7 @@ buttonAdd.onclick = function () {
     // очищаю поле вводу input
     input.value = "";
 
-}
+};
 
     let buttonSortName=document.getElementById("buttonSortName");
     let buttonSortValue= document.getElementById("buttonSortValue");
@@ -73,7 +73,7 @@ buttonSortName.onclick = function () {
         divInfo.appendChild(arr[i]);
     }
 
-}
+};
 
 
 buttonSortValue.onclick = function () {
