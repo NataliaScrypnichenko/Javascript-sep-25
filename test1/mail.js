@@ -9,7 +9,7 @@ buttonAdd.onclick = function () {
     let info = input.value.trim();
 
     // пере провіряємо ведені данні в input де Name = Value (Name літери, Value цифри)
-    let matchResult = info.match(/^([\p{L}]+)\s*=\s*([0-9]+)$/u);
+    let matchResult = info.match(/^([a-zA-Z0-9]+)\s*=\s*([a-zA-Z0-9]+)$/);
 
     // перевірка даних і додавання в divInfo
     if (matchResult) {
@@ -21,8 +21,10 @@ buttonAdd.onclick = function () {
         checkbox.type = "checkbox";
         checkbox.classList.add('checkbox_p');
 
+        let name = matchResult[1];
+        let value = matchResult[2];
 
-        p.innerText = matchResult[1] + " = " + matchResult[2] + ' ';
+        p.innerText = name + " = " + value + ' ';
         p.appendChild(checkbox);
 
         divInfo.appendChild(p);
@@ -91,6 +93,14 @@ buttonSortValue.onclick = function () {
         return valueB - valueA ;
 
     })
+    arr.sort(function(a, b){
+        let valueA = a.innerText.split('=')[1].trim();
+        let valueB = b.innerText.split('=')[1].trim();
+
+        if (valueA > valueB) return 1;
+        if (valueA < valueB) return -1;
+        return 0;
+    });
 
     divInfo.innerHTML = "";
 
