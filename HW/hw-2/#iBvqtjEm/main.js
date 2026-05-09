@@ -4,7 +4,6 @@
 // які приводиться до false, а це 0 null undefined і тд)
 
 let x = 0;
-
 if (x ===0 || x === '' || x ===NaN || x === null || x === undefined) {
     x = 'default'
 }
